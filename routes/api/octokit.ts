@@ -30,7 +30,7 @@ async function listAuthenticatedUserEmails(
 
 const emails = await listAuthenticatedUserEmails({});
 
-//  Shouldn't have to be any type, should be strong typed
+//  Shouldn't have to be any type, should be strong typed?
 const primaryEmail = emails.find((email: any) => email.primary);
 
 console.log(primaryEmail);
