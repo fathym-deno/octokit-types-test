@@ -12,6 +12,7 @@ const octokit = new TestOctokit({
   auth: Deno.env.get("GITHUB_TOKEN"),
 });
 
+//  Should this be strong typed without specifying anything from @octokit/types?
 const user = octokit.rest.users.getAuthenticated();
 
 type listAuthenticatedUserEmailsParameters =
@@ -20,6 +21,7 @@ type listAuthenticatedUserEmailsParameters =
 type listAuthenticatedUserEmailsResponse =
   Endpoints["GET /user/emails"]["response"];
 
+//  Is this correct usage of the above Endpoints types?
 async function listAuthenticatedUserEmails(
   params: listAuthenticatedUserEmailsParameters,
 ): listAuthenticatedUserEmailsResponse {
@@ -27,3 +29,8 @@ async function listAuthenticatedUserEmails(
 }
 
 const emails = await listAuthenticatedUserEmails({});
+
+//  Shouldn't have to be any type, should be strong typed
+const primaryEmail = emails.find((email: any) => email.primary);
+
+console.log(primaryEmail);
