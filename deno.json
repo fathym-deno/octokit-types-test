@@ -28,6 +28,7 @@
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
     "@octokit": "https://esm.sh/octokit@3.1.2?dts",
     "@octokit/plugin-paginate-graphql": "https://esm.sh/@octokit/plugin-paginate-graphql@4.0.0",
+    "@octokit/types": "https://esm.sh/@octokit/types@12.4.0",
     "$std/": "https://deno.land/std@0.208.0/",
     "twind": "https://esm.sh/@twind/core@1.1.3",
     "twind/": "https://esm.sh/@twind/core@1.1.3/",
