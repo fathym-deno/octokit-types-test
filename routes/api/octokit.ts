@@ -8,3 +8,5 @@ const octokit = new TestOctokit({
 });
 
 const user = octokit.rest.users.getAuthenticated();
+
+const emails = await octokit.request("GET /user/emails");
